@@ -201,6 +201,7 @@ const VisNode: React.FC<VisNodeProps> = ({ data, id }) => {
 
   const [plotType, setPlotType] = useState<string>("vanilla");
   const [plotImage, setPlotImage] = useState<string | null>(null);
+  const plotRequestInProgress = useRef(false);
 
   // const [plotType, setPlotType] = useState<string>("bar");
 
@@ -210,9 +211,10 @@ const VisNode: React.FC<VisNodeProps> = ({ data, id }) => {
     { value: "fpr", label: "False Positive Rate" },
     { value: "fnr", label: "False Negative Rate" },
     { value: "f1", label: "F1 Score" },
-    { value: "auc", label: "AUC" },
+    { value: "pinned auc", label: "Pinned AUC" },
     { value: "table", label: "Metric Overview per LLM" },
     { value: "confusion_per_llm", label: "Matrix per LLM" },
+    { value: "roc auc", label: "ROC AUC" },
   ];
 
   const handlePlotTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -223,7 +225,9 @@ const VisNode: React.FC<VisNodeProps> = ({ data, id }) => {
   };
 
   const generateMatplotlibPlot = async () => {
-    if (!responses || responses.length === 0) return;
+    if (plotRequestInProgress.current || !responses || responses.length === 0)
+      return;
+    plotRequestInProgress.current = true;
 
     // --- 1. assemble the same JSON you’d send to Plotly ---
     // you can include anything: raw responses, selected var, group, type, etc.
@@ -252,6 +256,8 @@ const VisNode: React.FC<VisNodeProps> = ({ data, id }) => {
       setPlotImage(dataUri);
     } catch (err) {
       console.error("Matplotlib plot failed:", err);
+    } finally {
+      plotRequestInProgress.current = false;
     }
   };
 

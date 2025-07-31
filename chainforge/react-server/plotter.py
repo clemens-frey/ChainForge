@@ -14,6 +14,11 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 
+import hashlib
+import json
+
+plot_cache: dict[str, str] = {}
+
 
 app = Flask(__name__)
 CORS(app)
@@ -29,9 +34,9 @@ def plot():
         fig = plot_heatmap(matrix, f"{metric_name.upper()} Heatmap")
         return fig
 
-    def plotMatrix(ax):
+    def plotMatrix(ax,df):
         """Plot confusion matrix."""
-        cm = calculate_metrics(y_true,y_pred)['confusion_matrix']
+        cm = calculate_metrics(df,df)['confusion_matrix']
         disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=["Negative (0)", "Positive (1)"])
         disp.plot(cmap='spring', ax=ax) 
         ax.set_xlabel("predicted label")
@@ -53,9 +58,25 @@ def plot():
             except (KeyError, ValueError):
                 continue
         return pd.DataFrame(records)
+    
+    def compute_pinned_auc_for_group(subdf: pd.DataFrame, df_all: pd.DataFrame):
+        # sample half of the slice
+        a = subdf.sample(frac=0.5, random_state=42)
+        # sample the *same number* of examples from the *rest* of the data
+        # (or from df_all, if you don’t mind overlaps)
+        b = df_all.sample(len(a), random_state=99)
+        # concatenate and compute AUC on their scores
+        combined = pd.concat([a, b])
+        return roc_auc_score(
+            combined["y_true"].astype(int),
+            combined["y_pred_values"].astype(float)
+        )
 
-    def calculate_metrics(y_true, y_pred):
+    def calculate_metrics(df_group, df):
         try:
+            y_true=df_group["y_true"]
+            y_pred=df_group["y_pred"]
+            y_pred_values=df_group["y_pred_values"]
             cm = confusion_matrix(y_true, y_pred, labels=[0, 1])
             tn, fp, fn, tp = cm.ravel()
             f1 = f1_score(y_true, y_pred, average="binary", zero_division=0)
@@ -64,9 +85,14 @@ def plot():
             accuracy = (tp + tn) / (tp + tn + fp + fn) if (tp + tn + fp + fn) > 0 else 0
             recall = tp / (tp + fn) if (tp + fn) > 0 else 0
             precision = tp / (tp + fp) if (tp + fp) > 0 else 0
-            auc = roc_auc_score(y_true, y_pred) if len(set(y_true)) > 1 else 0.0
+            roc_auc = roc_auc_score(y_true, y_pred_values) if len(set(y_true)) > 1 else 0.0
+
+            #df_sample_group = df_group.sample(frac = 0.5)
+            pinned_auc = calculate_pinned_auc(df_group, df.sample(df_group.shape[0]), 'y_true', 'y_pred', 'y_pred_values')
+
+            
             # Return metrics as a dictionary
-            return {"f1": f1, "fpr": fpr, "fnr": fnr, "auc": auc, "acc":accuracy, "prec":precision, "recall":recall, "confusion_matrix": cm}
+            return {"f1": f1, "fpr": fpr, "fnr": fnr, "pinned auc": pinned_auc,"roc auc":roc_auc, "acc":accuracy, "prec":precision, "recall":recall, "confusion_matrix": cm}
         except Exception as e:
             print("Metric calc error:", e)
             return {"f1": 0, "fpr": 0, "fnr": 0, "auc": 0}
@@ -76,23 +102,19 @@ def plot():
 
         grouped = df.groupby(["llm", "group"])
         for (llm, group), subdf in grouped:
-            if metric == "auc123":
-                # For AUC, we need to pin the subgroup examples with random samples from the full dataset
-                df_sample_group = subdf.sample(frac = 0.5)
-                try:
-                    result[(llm, group)] = calculate_pinned_auc(df_sample_group, subdf.sample(df_sample_group.shape[0]), 'y_true', 'y_pred', 'y_pred_values')
-                except ValueError as e:
-                    result[(llm, group)] = 0.0
-                    print(f"AUC calculation error for {llm}, {group}: {e}")
-            else:
-                m = calculate_metrics(subdf["y_true"], subdf["y_pred"])
-                result[(llm, group)] = m[metric]
+            m = calculate_metrics(subdf,df)
+            result[(llm, group)] = m[metric]
 
-        # Convert to matrix DataFrame
+        # Convert to matrix DataFrameS
         matrix = pd.Series(result).unstack(fill_value=0).sort_index()
         return matrix
     
-        
+
+
+    def get_payload_hash(data):
+        data_string = json.dumps(data, sort_keys=True)
+        return hashlib.md5(data_string.encode()).hexdigest()
+
     def calculate_pinned_auc(df_subgroup_examples, df_full_dataset_examples, y_true, y_pred, y_pred_values):
         # Combine examples from subgroup and random samples from full dataset
         pinned_dataset = pd.concat([df_subgroup_examples, df_full_dataset_examples]) 
@@ -157,7 +179,7 @@ def plot():
         # Group by LLM and aggregate metrics
         rows = []
         for llm, group_df in df.groupby("llm"):
-            m = calculate_metrics(group_df["y_true"], group_df["y_pred"])
+            m = calculate_metrics(group_df, df)
             rows.append({
                 "LLM": llm,
                 "ACC":  m["acc"],
@@ -166,7 +188,7 @@ def plot():
                 "FNR": m["fnr"],
                 "FPR": m["fpr"],
                 "F1": m["f1"],
-                "AUC": m["auc"],
+                "ROC AUC": m["roc auc"],
             })
 
         # Create DataFrame for table
@@ -292,6 +314,8 @@ def plot():
         for ax, llm in zip(axes, llms):
             subdf = df[df["llm"] == llm]
             cm = confusion_matrix(subdf["y_true"], subdf["y_pred"], labels=[0, 1])
+            #cm = calculate_metrics(subdf["y_true"],subdf["y_pred"],subdf)['confusion_matrix']
+
             disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=["Negative (0)", "Positive (1)"])
             disp.plot(cmap=sns.color_palette("rocket_r", as_cmap=True), ax=ax, colorbar=True)
             ax.set_title(llm)
@@ -357,7 +381,11 @@ def plot():
     y_pred = [entry["eval_res"]["items"][0] for entry in payload["responses"]]
     y_pred_values = [float(entry["responses"][0]) for entry in payload["responses"]]
       
-      
+    global plot_cache
+    payload_hash = get_payload_hash(payload)
+    if payload_hash in plot_cache:
+        # immediately return the cached image—no re-plot, no print
+        return jsonify({"image": plot_cache[payload_hash]})
 
     json_object = json.dumps(payload, indent=4)
         # Writing to sample.json
@@ -367,9 +395,10 @@ def plot():
     # create plot
     
     if plot_type == "matrix":
+        df = json_to_dataframe(responses)
         fig, ax = plt.subplots()
-        plotMatrix(ax)
-    elif plot_type in ("f1", "fpr", "fnr", "auc"):
+        plotMatrix(ax,df)
+    elif plot_type in ("f1", "fpr", "fnr", "pinned auc","roc auc"):
         df = json_to_dataframe(responses)
         matrix = compute_metric_matrix(df, plot_type)
         fig = plot_heatmap(matrix,plot_type)
@@ -383,11 +412,25 @@ def plot():
     else:
         return jsonify({"error": f"Unsupported plot_type '{plot_type}'"}), 400
   
-    # return json for React
+
+  
+
+
+    # … do your plotting once …
+
     img_base64 = fig_to_base64(fig)
+    plot_cache[payload_hash] = img_base64
+    print("Plotting new image")   # only prints on cache miss
     return jsonify({"image": img_base64})
 
+  
+
+'''    img_base64 = fig_to_base64(fig)
+    cache[payload_hash] = img_base64
+    print("Plotting")
+    return jsonify({"image": img_base64})'''
+
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=5000, debug=True)
+    app.run(host="127.0.0.1", port=5000, debug=False)
 
 
