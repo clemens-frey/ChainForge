@@ -197,70 +197,6 @@ const VisNode: React.FC<VisNodeProps> = ({ data, id }) => {
     setDataPropsForNode(id, { selected_vars: [new_val.target.value] });
   };
 
-  // Clemens Adds stuff:
-
-  const [plotType, setPlotType] = useState<string>("vanilla");
-  const [plotImage, setPlotImage] = useState<string | null>(null);
-
-  // const [plotType, setPlotType] = useState<string>("bar");
-
-  const plotTypeOptions = [
-    { value: "vanilla", label: "Vanilla" },
-    { value: "matrix", label: "Confusion matrix" },
-    { value: "fpr", label: "False Positive Rate" },
-    { value: "fnr", label: "False Negative Rate" },
-    { value: "f1", label: "F1 Score" },
-    { value: "auc", label: "AUC" },
-    { value: "table", label: "Metric Overview per LLM" },
-    { value: "confusion_per_llm", label: "Matrix per LLM" },
-  ];
-
-  const handlePlotTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const val = e.target.value;
-    setPlotType(val);
-    console.log(val);
-    setDataPropsForNode(id, { plot_type: val });
-  };
-
-  const generateMatplotlibPlot = async () => {
-    if (!responses || responses.length === 0) return;
-
-    // --- 1. assemble the same JSON you’d send to Plotly ---
-    // you can include anything: raw responses, selected var, group, type, etc.
-    const payload = {
-      vars: data.vars, // all available var options
-      selected_var: multiSelectValue, // y-axis
-      llm_group: selectedLLMGroup, // group by
-      plot_type: plotType, // bar, box, scatter3d, etcw
-      responses, // the full LLMResponse[] array
-    };
-
-    try {
-      const resp = await fetch("http://127.0.0.1:5000/plot", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      if (!resp.ok) throw new Error(await resp.text());
-
-      const { image } = await resp.json();
-
-      // setPlotImage(`data:image/png;base64,${image}`);
-
-      const dataUri = `data:image/png;base64,${image}`;
-
-      setPlotImage(dataUri);
-    } catch (err) {
-      console.error("Matplotlib plot failed:", err);
-    }
-  };
-
-  useEffect(() => {
-    if (plotType && plotType !== "vanilla" && responses.length > 0) {
-      generateMatplotlibPlot();
-    }
-  }, [plotType, responses, generateMatplotlibPlot]);
-
   // Re-plot responses when anything changes
   useEffect(() => {
     if (!responses || responses.length === 0 || !multiSelectValue) return;
@@ -1064,34 +1000,6 @@ const VisNode: React.FC<VisNodeProps> = ({ data, id }) => {
               whiteSpace: "nowrap",
             }}
           >
-            plot type:
-          </span>
-          <NativeSelect
-            onChange={handlePlotTypeChange}
-            className="nodrag nowheel"
-            data={plotTypeOptions}
-            size="xs"
-            value={plotType}
-            miw="80px"
-            //  disabled
-          />
-        </div>
-        <div
-          style={{
-            display: "inline-flex",
-            justifyContent: "space-evenly",
-            maxWidth: "30%",
-            marginLeft: "10pt",
-          }}
-        >
-          <span
-            style={{
-              fontSize: "10pt",
-              margin: "6pt 3pt 0 0",
-              fontWeight: "bold",
-              whiteSpace: "nowrap",
-            }}
-          >
             y-axis:
           </span>
           <NativeSelect
@@ -1162,49 +1070,6 @@ const VisNode: React.FC<VisNodeProps> = ({ data, id }) => {
         </div>
       </div>
       <hr />
-
-      <div
-        className="nodrag"
-        ref={setPlotDivRef}
-        style={{ minWidth: "150px", minHeight: "100px" }}
-      >
-        {/*
-          If plotImage (the Matplotlib PNG URI) exists, render it here.
-          Otherwise fall back to Plotly or the placeholder.
-        */}
-        {plotImage && plotType !== "vanilla" ? (
-          <img
-            src={plotImage}
-            alt="Matplotlib plot"
-            style={{
-              display: "block",
-              maxWidth: "100%",
-              maxHeight: "100%",
-              margin: 0,
-            }}
-          />
-        ) : plotlySpec && plotlySpec.length > 0 ? (
-          <>
-            <Plot
-              ref={plotlyRef}
-              data={plotlySpec}
-              layout={plotlyLayout}
-              useResizeHandler={true}
-              className="plotly-vis"
-              style={{
-                display: "block",
-                width: "100%",
-                height: "100%",
-              }}
-            />
-            {plotLegend}
-          </>
-        ) : (
-          placeholderText
-        )}
-      </div>
-
-      {/*
       <div
         className="nodrag"
         ref={setPlotDivRef}
@@ -1223,8 +1088,6 @@ const VisNode: React.FC<VisNodeProps> = ({ data, id }) => {
         />
         {plotLegend ?? <></>}
       </div>
-*/}
-
       <Handle
         type="target"
         position={Position.Left}

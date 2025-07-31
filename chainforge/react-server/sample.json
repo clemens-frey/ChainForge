@@ -1,0 +1,2365 @@
+{
+  "vars": [
+    {
+      "value": "LLM (default)",
+      "label": "LLM (default)"
+    },
+    {
+      "value": "Input",
+      "label": "Input"
+    },
+    {
+      "value": "__meta_ids",
+      "label": "ids (meta)"
+    },
+    {
+      "value": "__meta_true_label",
+      "label": "true_label (meta)"
+    }
+  ],
+  "selected_var": "LLM (default)",
+  "llm_group": "LLM",
+  "plot_type": "bar",
+  "responses": [
+    {
+      "vars": {
+        "Input": "see observe this is a gaslight even though you lost goyim niggers are still your best friends"
+      },
+      "metavars": {
+        "ids": "HX15248",
+        "true_label": "1",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT4o-mini"
+      },
+      "uid": "83c09bae-e903-407c-ad6f-d52808888af1",
+      "llm": {
+        "key": "452b331d-823e-4b57-8b6c-555c8f3fd503",
+        "name": "GPT4o-mini",
+        "emoji": "\ud83d\udc44",
+        "model": "gpt-4o-mini",
+        "base_model": "gpt-4",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT4o-mini",
+          "model": "gpt-4o-mini"
+        },
+        "progress": {
+          "success": 100,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"see observe this is a gaslight even though you lost goyim niggers are still your best friends\"",
+      "responses": ["Yes."],
+      "tokens": {},
+      "eval_res": {
+        "items": [1],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "see observe this is a gaslight even though you lost goyim niggers are still your best friends"
+      },
+      "metavars": {
+        "ids": "HX15248",
+        "true_label": "1",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT3.5"
+      },
+      "uid": "8bbe7d64-6ded-46ad-a8a8-63b17cd93fd2",
+      "llm": {
+        "key": "7a292e56-00e0-4574-b764-e047ece14558",
+        "name": "GPT3.5",
+        "emoji": "\ud83e\udd16",
+        "model": "gpt-3.5-turbo",
+        "base_model": "gpt-3.5-turbo",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT3.5",
+          "model": "gpt-3.5-turbo",
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": "text",
+          "tools": "",
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": "",
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "progress": {
+          "success": 95,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"see observe this is a gaslight even though you lost goyim niggers are still your best friends\"",
+      "responses": ["Yes."],
+      "tokens": {},
+      "eval_res": {
+        "items": [1],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "i got acid in my eyes white bitch in my ride"
+      },
+      "metavars": {
+        "ids": "HX6179",
+        "true_label": "0",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT4o-mini"
+      },
+      "uid": "65b607b9-f4fd-476d-88d4-5628f5e7c1c0",
+      "llm": {
+        "key": "452b331d-823e-4b57-8b6c-555c8f3fd503",
+        "name": "GPT4o-mini",
+        "emoji": "\ud83d\udc44",
+        "model": "gpt-4o-mini",
+        "base_model": "gpt-4",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT4o-mini",
+          "model": "gpt-4o-mini"
+        },
+        "progress": {
+          "success": 100,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"i got acid in my eyes white bitch in my ride\"",
+      "responses": ["Yes."],
+      "tokens": {},
+      "eval_res": {
+        "items": [1],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "i got acid in my eyes white bitch in my ride"
+      },
+      "metavars": {
+        "ids": "HX6179",
+        "true_label": "0",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT3.5"
+      },
+      "uid": "c766b602-09a8-49d4-a7b9-f45ff39fdd4d",
+      "llm": {
+        "key": "7a292e56-00e0-4574-b764-e047ece14558",
+        "name": "GPT3.5",
+        "emoji": "\ud83e\udd16",
+        "model": "gpt-3.5-turbo",
+        "base_model": "gpt-3.5-turbo",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT3.5",
+          "model": "gpt-3.5-turbo",
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": "text",
+          "tools": "",
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": "",
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "progress": {
+          "success": 95,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"i got acid in my eyes white bitch in my ride\"",
+      "responses": ["Yes."],
+      "tokens": {},
+      "eval_res": {
+        "items": [1],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "remember how quiet every other pres has been after they left the use obongo because he is a nigger and they think white guilt will work obey obey you were taught in in schools gov and all media obey"
+      },
+      "metavars": {
+        "ids": "HX247",
+        "true_label": "1",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT4o-mini"
+      },
+      "uid": "806c05fa-f842-43c8-8275-9ac745eb6d46",
+      "llm": {
+        "key": "452b331d-823e-4b57-8b6c-555c8f3fd503",
+        "name": "GPT4o-mini",
+        "emoji": "\ud83d\udc44",
+        "model": "gpt-4o-mini",
+        "base_model": "gpt-4",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT4o-mini",
+          "model": "gpt-4o-mini"
+        },
+        "progress": {
+          "success": 100,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"remember how quiet every other pres has been after they left the use obongo because he is a nigger and they think white guilt will work obey obey you were taught in in schools gov and all media obey\"",
+      "responses": ["Yes."],
+      "tokens": {},
+      "eval_res": {
+        "items": [1],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "remember how quiet every other pres has been after they left the use obongo because he is a nigger and they think white guilt will work obey obey you were taught in in schools gov and all media obey"
+      },
+      "metavars": {
+        "ids": "HX247",
+        "true_label": "1",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT3.5"
+      },
+      "uid": "3c8cb6bb-d768-4b71-8e25-34360b1a2f27",
+      "llm": {
+        "key": "7a292e56-00e0-4574-b764-e047ece14558",
+        "name": "GPT3.5",
+        "emoji": "\ud83e\udd16",
+        "model": "gpt-3.5-turbo",
+        "base_model": "gpt-3.5-turbo",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT3.5",
+          "model": "gpt-3.5-turbo",
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": "text",
+          "tools": "",
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": "",
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "progress": {
+          "success": 95,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"remember how quiet every other pres has been after they left the use obongo because he is a nigger and they think white guilt will work obey obey you were taught in in schools gov and all media obey\"",
+      "responses": ["Yes."],
+      "tokens": {},
+      "eval_res": {
+        "items": [1],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "<user> gt they can not love you gt implying 3 d women are capable of love either"
+      },
+      "metavars": {
+        "ids": "HX11083",
+        "true_label": "0",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT4o-mini"
+      },
+      "uid": "49a205ee-b74e-4332-8f1c-b9cb32fc17e4",
+      "llm": {
+        "key": "452b331d-823e-4b57-8b6c-555c8f3fd503",
+        "name": "GPT4o-mini",
+        "emoji": "\ud83d\udc44",
+        "model": "gpt-4o-mini",
+        "base_model": "gpt-4",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT4o-mini",
+          "model": "gpt-4o-mini"
+        },
+        "progress": {
+          "success": 100,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"<user> gt they can not love you gt implying 3 d women are capable of love either\"",
+      "responses": ["No."],
+      "tokens": {},
+      "eval_res": {
+        "items": [0],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "<user> gt they can not love you gt implying 3 d women are capable of love either"
+      },
+      "metavars": {
+        "ids": "HX11083",
+        "true_label": "0",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT3.5"
+      },
+      "uid": "af0e8c6b-393a-41a2-b946-08d64d9a4437",
+      "llm": {
+        "key": "7a292e56-00e0-4574-b764-e047ece14558",
+        "name": "GPT3.5",
+        "emoji": "\ud83e\udd16",
+        "model": "gpt-3.5-turbo",
+        "base_model": "gpt-3.5-turbo",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT3.5",
+          "model": "gpt-3.5-turbo",
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": "text",
+          "tools": "",
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": "",
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "progress": {
+          "success": 95,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"<user> gt they can not love you gt implying 3 d women are capable of love either\"",
+      "responses": ["Yes."],
+      "tokens": {},
+      "eval_res": {
+        "items": [1],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "cowardly actions by the pussy brits men let their women be gangraped by moslim animals should change countrys name to cuckland"
+      },
+      "metavars": {
+        "ids": "HX16250",
+        "true_label": "1",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT4o-mini"
+      },
+      "uid": "f619d770-7d03-4d20-a69d-e324c4ea7656",
+      "llm": {
+        "key": "452b331d-823e-4b57-8b6c-555c8f3fd503",
+        "name": "GPT4o-mini",
+        "emoji": "\ud83d\udc44",
+        "model": "gpt-4o-mini",
+        "base_model": "gpt-4",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT4o-mini",
+          "model": "gpt-4o-mini"
+        },
+        "progress": {
+          "success": 100,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"cowardly actions by the pussy brits men let their women be gangraped by moslim animals should change countrys name to cuckland\"",
+      "responses": ["Yes."],
+      "tokens": {},
+      "eval_res": {
+        "items": [1],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "cowardly actions by the pussy brits men let their women be gangraped by moslim animals should change countrys name to cuckland"
+      },
+      "metavars": {
+        "ids": "HX16250",
+        "true_label": "1",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT3.5"
+      },
+      "uid": "ad02ee31-d01c-4d8a-bd9c-430b971bc2ed",
+      "llm": {
+        "key": "7a292e56-00e0-4574-b764-e047ece14558",
+        "name": "GPT3.5",
+        "emoji": "\ud83e\udd16",
+        "model": "gpt-3.5-turbo",
+        "base_model": "gpt-3.5-turbo",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT3.5",
+          "model": "gpt-3.5-turbo",
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": "text",
+          "tools": "",
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": "",
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "progress": {
+          "success": 95,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"cowardly actions by the pussy brits men let their women be gangraped by moslim animals should change countrys name to cuckland\"",
+      "responses": ["Yes."],
+      "tokens": {},
+      "eval_res": {
+        "items": [1],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "you are not a squishy smolbean you are <number> pounds overweight you fat fucking retard"
+      },
+      "metavars": {
+        "ids": "HX13636",
+        "true_label": "1",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT4o-mini"
+      },
+      "uid": "1afd070c-f178-49d2-8ff6-b58b71e11510",
+      "llm": {
+        "key": "452b331d-823e-4b57-8b6c-555c8f3fd503",
+        "name": "GPT4o-mini",
+        "emoji": "\ud83d\udc44",
+        "model": "gpt-4o-mini",
+        "base_model": "gpt-4",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT4o-mini",
+          "model": "gpt-4o-mini"
+        },
+        "progress": {
+          "success": 100,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"you are not a squishy smolbean you are <number> pounds overweight you fat fucking retard\"",
+      "responses": ["Yes."],
+      "tokens": {},
+      "eval_res": {
+        "items": [1],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "you are not a squishy smolbean you are <number> pounds overweight you fat fucking retard"
+      },
+      "metavars": {
+        "ids": "HX13636",
+        "true_label": "1",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT3.5"
+      },
+      "uid": "6e6f4c8e-0b7e-45fc-b572-192b337f98fe",
+      "llm": {
+        "key": "7a292e56-00e0-4574-b764-e047ece14558",
+        "name": "GPT3.5",
+        "emoji": "\ud83e\udd16",
+        "model": "gpt-3.5-turbo",
+        "base_model": "gpt-3.5-turbo",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT3.5",
+          "model": "gpt-3.5-turbo",
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": "text",
+          "tools": "",
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": "",
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "progress": {
+          "success": 95,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"you are not a squishy smolbean you are <number> pounds overweight you fat fucking retard\"",
+      "responses": ["Yes."],
+      "tokens": {},
+      "eval_res": {
+        "items": [1],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "to summarize the media kicked off this week with an elitist dinner to honor the first amendment only to cripple themselves with a series of fake news stories rancorous behavior and yet another sexual harassment scandal keep up the good work guys"
+      },
+      "metavars": {
+        "ids": "HX18091",
+        "true_label": "0",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT4o-mini"
+      },
+      "uid": "122d3ed8-8bcf-480a-820a-3c9e542f6cc2",
+      "llm": {
+        "key": "452b331d-823e-4b57-8b6c-555c8f3fd503",
+        "name": "GPT4o-mini",
+        "emoji": "\ud83d\udc44",
+        "model": "gpt-4o-mini",
+        "base_model": "gpt-4",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT4o-mini",
+          "model": "gpt-4o-mini"
+        },
+        "progress": {
+          "success": 100,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"to summarize the media kicked off this week with an elitist dinner to honor the first amendment only to cripple themselves with a series of fake news stories rancorous behavior and yet another sexual harassment scandal keep up the good work guys\"",
+      "responses": ["No"],
+      "tokens": {},
+      "eval_res": {
+        "items": [0],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "to summarize the media kicked off this week with an elitist dinner to honor the first amendment only to cripple themselves with a series of fake news stories rancorous behavior and yet another sexual harassment scandal keep up the good work guys"
+      },
+      "metavars": {
+        "ids": "HX18091",
+        "true_label": "0",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT3.5"
+      },
+      "uid": "4903f851-6633-4706-be99-859d6bdb7047",
+      "llm": {
+        "key": "7a292e56-00e0-4574-b764-e047ece14558",
+        "name": "GPT3.5",
+        "emoji": "\ud83e\udd16",
+        "model": "gpt-3.5-turbo",
+        "base_model": "gpt-3.5-turbo",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT3.5",
+          "model": "gpt-3.5-turbo",
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": "text",
+          "tools": "",
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": "",
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "progress": {
+          "success": 95,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"to summarize the media kicked off this week with an elitist dinner to honor the first amendment only to cripple themselves with a series of fake news stories rancorous behavior and yet another sexual harassment scandal keep up the good work guys\"",
+      "responses": ["No."],
+      "tokens": {},
+      "eval_res": {
+        "items": [0],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "<user> the adl does not think it okay to be white simplified"
+      },
+      "metavars": {
+        "ids": "HX7339",
+        "true_label": "0",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT4o-mini"
+      },
+      "uid": "d9c36d12-6218-401f-add8-cecc92bf411b",
+      "llm": {
+        "key": "452b331d-823e-4b57-8b6c-555c8f3fd503",
+        "name": "GPT4o-mini",
+        "emoji": "\ud83d\udc44",
+        "model": "gpt-4o-mini",
+        "base_model": "gpt-4",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT4o-mini",
+          "model": "gpt-4o-mini"
+        },
+        "progress": {
+          "success": 100,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"<user> the adl does not think it okay to be white simplified\"",
+      "responses": ["No"],
+      "tokens": {},
+      "eval_res": {
+        "items": [0],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "<user> the adl does not think it okay to be white simplified"
+      },
+      "metavars": {
+        "ids": "HX7339",
+        "true_label": "0",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT3.5"
+      },
+      "uid": "54267b92-c7ed-438c-88a5-3daa529edc13",
+      "llm": {
+        "key": "7a292e56-00e0-4574-b764-e047ece14558",
+        "name": "GPT3.5",
+        "emoji": "\ud83e\udd16",
+        "model": "gpt-3.5-turbo",
+        "base_model": "gpt-3.5-turbo",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT3.5",
+          "model": "gpt-3.5-turbo",
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": "text",
+          "tools": "",
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": "",
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "progress": {
+          "success": 95,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"<user> the adl does not think it okay to be white simplified\"",
+      "responses": ["Yes"],
+      "tokens": {},
+      "eval_res": {
+        "items": [1],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "on top of that you can just read the replies and see people want a reason to disrespect blacks because a person made a comment on how you speak which is a fact every race has a certain characteristic in the way they talk which relates to their race"
+      },
+      "metavars": {
+        "ids": "HX4801",
+        "true_label": "0",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT4o-mini"
+      },
+      "uid": "5d95984c-3b50-4960-ae9b-324484ac7410",
+      "llm": {
+        "key": "452b331d-823e-4b57-8b6c-555c8f3fd503",
+        "name": "GPT4o-mini",
+        "emoji": "\ud83d\udc44",
+        "model": "gpt-4o-mini",
+        "base_model": "gpt-4",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT4o-mini",
+          "model": "gpt-4o-mini"
+        },
+        "progress": {
+          "success": 100,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"on top of that you can just read the replies and see people want a reason to disrespect blacks because a person made a comment on how you speak which is a fact every race has a certain characteristic in the way they talk which relates to their race\"",
+      "responses": ["Yes."],
+      "tokens": {},
+      "eval_res": {
+        "items": [1],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "on top of that you can just read the replies and see people want a reason to disrespect blacks because a person made a comment on how you speak which is a fact every race has a certain characteristic in the way they talk which relates to their race"
+      },
+      "metavars": {
+        "ids": "HX4801",
+        "true_label": "0",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT3.5"
+      },
+      "uid": "c289d086-5b56-41de-a94a-16bd084b6aa9",
+      "llm": {
+        "key": "7a292e56-00e0-4574-b764-e047ece14558",
+        "name": "GPT3.5",
+        "emoji": "\ud83e\udd16",
+        "model": "gpt-3.5-turbo",
+        "base_model": "gpt-3.5-turbo",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT3.5",
+          "model": "gpt-3.5-turbo",
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": "text",
+          "tools": "",
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": "",
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "progress": {
+          "success": 95,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"on top of that you can just read the replies and see people want a reason to disrespect blacks because a person made a comment on how you speak which is a fact every race has a certain characteristic in the way they talk which relates to their race\"",
+      "responses": ["Yes."],
+      "tokens": {},
+      "eval_res": {
+        "items": [1],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "lol oomfs unfollow nak2moto they used dyke on multiple occasions when they arent lesbian"
+      },
+      "metavars": {
+        "ids": "HX4239",
+        "true_label": "0",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT4o-mini"
+      },
+      "uid": "9fdb914e-2ffc-4acb-b6e4-ac0673538350",
+      "llm": {
+        "key": "452b331d-823e-4b57-8b6c-555c8f3fd503",
+        "name": "GPT4o-mini",
+        "emoji": "\ud83d\udc44",
+        "model": "gpt-4o-mini",
+        "base_model": "gpt-4",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT4o-mini",
+          "model": "gpt-4o-mini"
+        },
+        "progress": {
+          "success": 100,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"lol oomfs unfollow nak2moto they used dyke on multiple occasions when they arent lesbian\"",
+      "responses": ["No"],
+      "tokens": {},
+      "eval_res": {
+        "items": [0],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "lol oomfs unfollow nak2moto they used dyke on multiple occasions when they arent lesbian"
+      },
+      "metavars": {
+        "ids": "HX4239",
+        "true_label": "0",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT3.5"
+      },
+      "uid": "c6cb16e6-d53b-4e0a-926b-c62f2ba9c75e",
+      "llm": {
+        "key": "7a292e56-00e0-4574-b764-e047ece14558",
+        "name": "GPT3.5",
+        "emoji": "\ud83e\udd16",
+        "model": "gpt-3.5-turbo",
+        "base_model": "gpt-3.5-turbo",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT3.5",
+          "model": "gpt-3.5-turbo",
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": "text",
+          "tools": "",
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": "",
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "progress": {
+          "success": 95,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"lol oomfs unfollow nak2moto they used dyke on multiple occasions when they arent lesbian\"",
+      "responses": ["Yes"],
+      "tokens": {},
+      "eval_res": {
+        "items": [1],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "<user> <user> how is the a nazi please explain just realised you are the same mongoloid that made a fake account of her as well strange behaviour no wonder you can not wrap your head around a democratic vote"
+      },
+      "metavars": {
+        "ids": "HX5931",
+        "true_label": "0",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT4o-mini"
+      },
+      "uid": "2765277e-d4a8-433f-ab6c-c16151b7cdf6",
+      "llm": {
+        "key": "452b331d-823e-4b57-8b6c-555c8f3fd503",
+        "name": "GPT4o-mini",
+        "emoji": "\ud83d\udc44",
+        "model": "gpt-4o-mini",
+        "base_model": "gpt-4",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT4o-mini",
+          "model": "gpt-4o-mini"
+        },
+        "progress": {
+          "success": 100,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"<user> <user> how is the a nazi please explain just realised you are the same mongoloid that made a fake account of her as well strange behaviour no wonder you can not wrap your head around a democratic vote\"",
+      "responses": ["Yes."],
+      "tokens": {},
+      "eval_res": {
+        "items": [1],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "<user> <user> how is the a nazi please explain just realised you are the same mongoloid that made a fake account of her as well strange behaviour no wonder you can not wrap your head around a democratic vote"
+      },
+      "metavars": {
+        "ids": "HX5931",
+        "true_label": "0",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT3.5"
+      },
+      "uid": "b46b75c3-aad5-462d-86ac-3cf1db229c24",
+      "llm": {
+        "key": "7a292e56-00e0-4574-b764-e047ece14558",
+        "name": "GPT3.5",
+        "emoji": "\ud83e\udd16",
+        "model": "gpt-3.5-turbo",
+        "base_model": "gpt-3.5-turbo",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT3.5",
+          "model": "gpt-3.5-turbo",
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": "text",
+          "tools": "",
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": "",
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "progress": {
+          "success": 95,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"<user> <user> how is the a nazi please explain just realised you are the same mongoloid that made a fake account of her as well strange behaviour no wonder you can not wrap your head around a democratic vote\"",
+      "responses": ["Yes."],
+      "tokens": {},
+      "eval_res": {
+        "items": [1],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "stan lee doesm t like faggots like you harvey"
+      },
+      "metavars": {
+        "ids": "HX15855",
+        "true_label": "1",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT4o-mini"
+      },
+      "uid": "65a92095-7acf-4539-9ceb-e56dc2435f8c",
+      "llm": {
+        "key": "452b331d-823e-4b57-8b6c-555c8f3fd503",
+        "name": "GPT4o-mini",
+        "emoji": "\ud83d\udc44",
+        "model": "gpt-4o-mini",
+        "base_model": "gpt-4",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT4o-mini",
+          "model": "gpt-4o-mini"
+        },
+        "progress": {
+          "success": 100,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"stan lee doesm t like faggots like you harvey\"",
+      "responses": ["Yes"],
+      "tokens": {},
+      "eval_res": {
+        "items": [1],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "stan lee doesm t like faggots like you harvey"
+      },
+      "metavars": {
+        "ids": "HX15855",
+        "true_label": "1",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT3.5"
+      },
+      "uid": "a4df6c8d-94af-4532-aa44-24c416c81fc5",
+      "llm": {
+        "key": "7a292e56-00e0-4574-b764-e047ece14558",
+        "name": "GPT3.5",
+        "emoji": "\ud83e\udd16",
+        "model": "gpt-3.5-turbo",
+        "base_model": "gpt-3.5-turbo",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT3.5",
+          "model": "gpt-3.5-turbo",
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": "text",
+          "tools": "",
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": "",
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "progress": {
+          "success": 95,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"stan lee doesm t like faggots like you harvey\"",
+      "responses": ["Yes."],
+      "tokens": {},
+      "eval_res": {
+        "items": [1],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "my little sister came into my room anx yelled \u201c your gay for catra \u201c helpcfndjdk"
+      },
+      "metavars": {
+        "ids": "HX13773",
+        "true_label": "0",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT4o-mini"
+      },
+      "uid": "fb10c99e-d708-49a6-8dd9-708ade569cee",
+      "llm": {
+        "key": "452b331d-823e-4b57-8b6c-555c8f3fd503",
+        "name": "GPT4o-mini",
+        "emoji": "\ud83d\udc44",
+        "model": "gpt-4o-mini",
+        "base_model": "gpt-4",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT4o-mini",
+          "model": "gpt-4o-mini"
+        },
+        "progress": {
+          "success": 100,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"my little sister came into my room anx yelled \u201c your gay for catra \u201c helpcfndjdk\"",
+      "responses": ["No."],
+      "tokens": {},
+      "eval_res": {
+        "items": [0],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "my little sister came into my room anx yelled \u201c your gay for catra \u201c helpcfndjdk"
+      },
+      "metavars": {
+        "ids": "HX13773",
+        "true_label": "0",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT3.5"
+      },
+      "uid": "a3fa7676-6519-4ff9-9d83-600203fb6abd",
+      "llm": {
+        "key": "7a292e56-00e0-4574-b764-e047ece14558",
+        "name": "GPT3.5",
+        "emoji": "\ud83e\udd16",
+        "model": "gpt-3.5-turbo",
+        "base_model": "gpt-3.5-turbo",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT3.5",
+          "model": "gpt-3.5-turbo",
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": "text",
+          "tools": "",
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": "",
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "progress": {
+          "success": 95,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"my little sister came into my room anx yelled \u201c your gay for catra \u201c helpcfndjdk\"",
+      "responses": ["No."],
+      "tokens": {},
+      "eval_res": {
+        "items": [0],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "there so much community in the ghetto tho \ud83d\ude2d \ud83d\udc97"
+      },
+      "metavars": {
+        "ids": "HX7795",
+        "true_label": "0",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT4o-mini"
+      },
+      "uid": "e7b6eeb3-136a-4f9e-b68f-2422cb04f828",
+      "llm": {
+        "key": "452b331d-823e-4b57-8b6c-555c8f3fd503",
+        "name": "GPT4o-mini",
+        "emoji": "\ud83d\udc44",
+        "model": "gpt-4o-mini",
+        "base_model": "gpt-4",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT4o-mini",
+          "model": "gpt-4o-mini"
+        },
+        "progress": {
+          "success": 100,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"there so much community in the ghetto tho \ud83d\ude2d \ud83d\udc97\"",
+      "responses": ["No."],
+      "tokens": {},
+      "eval_res": {
+        "items": [0],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "there so much community in the ghetto tho \ud83d\ude2d \ud83d\udc97"
+      },
+      "metavars": {
+        "ids": "HX7795",
+        "true_label": "0",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT3.5"
+      },
+      "uid": "91ab19e6-5910-48ca-a603-f1d0bdf5a770",
+      "llm": {
+        "key": "7a292e56-00e0-4574-b764-e047ece14558",
+        "name": "GPT3.5",
+        "emoji": "\ud83e\udd16",
+        "model": "gpt-3.5-turbo",
+        "base_model": "gpt-3.5-turbo",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT3.5",
+          "model": "gpt-3.5-turbo",
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": "text",
+          "tools": "",
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": "",
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "progress": {
+          "success": 95,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"there so much community in the ghetto tho \ud83d\ude2d \ud83d\udc97\"",
+      "responses": ["No."],
+      "tokens": {},
+      "eval_res": {
+        "items": [0],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "<user> \ud83d\ude02 \ud83d\ude02 \ud83d\ude02 \ud83d\ude02 i took one from this white dude and i had one of my own ion use em no more since niggas been dying and shit"
+      },
+      "metavars": {
+        "ids": "HX2691",
+        "true_label": "0",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT4o-mini"
+      },
+      "uid": "0a655efa-9be4-4c50-9c78-55edb99d30c9",
+      "llm": {
+        "key": "452b331d-823e-4b57-8b6c-555c8f3fd503",
+        "name": "GPT4o-mini",
+        "emoji": "\ud83d\udc44",
+        "model": "gpt-4o-mini",
+        "base_model": "gpt-4",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT4o-mini",
+          "model": "gpt-4o-mini"
+        },
+        "progress": {
+          "success": 100,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"<user> \ud83d\ude02 \ud83d\ude02 \ud83d\ude02 \ud83d\ude02 i took one from this white dude and i had one of my own ion use em no more since niggas been dying and shit\"",
+      "responses": ["Yes."],
+      "tokens": {},
+      "eval_res": {
+        "items": [1],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "<user> \ud83d\ude02 \ud83d\ude02 \ud83d\ude02 \ud83d\ude02 i took one from this white dude and i had one of my own ion use em no more since niggas been dying and shit"
+      },
+      "metavars": {
+        "ids": "HX2691",
+        "true_label": "0",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT3.5"
+      },
+      "uid": "54b99474-979d-42a3-b41c-860fd967f75f",
+      "llm": {
+        "key": "7a292e56-00e0-4574-b764-e047ece14558",
+        "name": "GPT3.5",
+        "emoji": "\ud83e\udd16",
+        "model": "gpt-3.5-turbo",
+        "base_model": "gpt-3.5-turbo",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT3.5",
+          "model": "gpt-3.5-turbo",
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": "text",
+          "tools": "",
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": "",
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "progress": {
+          "success": 95,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"<user> \ud83d\ude02 \ud83d\ude02 \ud83d\ude02 \ud83d\ude02 i took one from this white dude and i had one of my own ion use em no more since niggas been dying and shit\"",
+      "responses": ["Yes."],
+      "tokens": {},
+      "eval_res": {
+        "items": [1],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "the muzzie headrag represents nothing more than misogyny and oppression western liberals are useful idiots"
+      },
+      "metavars": {
+        "ids": "HX4059",
+        "true_label": "1",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT4o-mini"
+      },
+      "uid": "bceaccc0-91ce-49b4-85d1-01200a919c7e",
+      "llm": {
+        "key": "452b331d-823e-4b57-8b6c-555c8f3fd503",
+        "name": "GPT4o-mini",
+        "emoji": "\ud83d\udc44",
+        "model": "gpt-4o-mini",
+        "base_model": "gpt-4",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT4o-mini",
+          "model": "gpt-4o-mini"
+        },
+        "progress": {
+          "success": 100,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"the muzzie headrag represents nothing more than misogyny and oppression western liberals are useful idiots\"",
+      "responses": ["Yes."],
+      "tokens": {},
+      "eval_res": {
+        "items": [1],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "the muzzie headrag represents nothing more than misogyny and oppression western liberals are useful idiots"
+      },
+      "metavars": {
+        "ids": "HX4059",
+        "true_label": "1",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT3.5"
+      },
+      "uid": "ff182985-2658-4ca9-905d-bd8b6fa2e500",
+      "llm": {
+        "key": "7a292e56-00e0-4574-b764-e047ece14558",
+        "name": "GPT3.5",
+        "emoji": "\ud83e\udd16",
+        "model": "gpt-3.5-turbo",
+        "base_model": "gpt-3.5-turbo",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT3.5",
+          "model": "gpt-3.5-turbo",
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": "text",
+          "tools": "",
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": "",
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "progress": {
+          "success": 95,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"the muzzie headrag represents nothing more than misogyny and oppression western liberals are useful idiots\"",
+      "responses": ["Yes."],
+      "tokens": {},
+      "eval_res": {
+        "items": [1],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "<user> republicans don \u2019 t hate gays"
+      },
+      "metavars": {
+        "ids": "HX10880",
+        "true_label": "0",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT4o-mini"
+      },
+      "uid": "0cc3316e-6555-4a1c-9898-39f32578311d",
+      "llm": {
+        "key": "452b331d-823e-4b57-8b6c-555c8f3fd503",
+        "name": "GPT4o-mini",
+        "emoji": "\ud83d\udc44",
+        "model": "gpt-4o-mini",
+        "base_model": "gpt-4",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT4o-mini",
+          "model": "gpt-4o-mini"
+        },
+        "progress": {
+          "success": 100,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"<user> republicans don \u2019 t hate gays\"",
+      "responses": ["No"],
+      "tokens": {},
+      "eval_res": {
+        "items": [0],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "<user> republicans don \u2019 t hate gays"
+      },
+      "metavars": {
+        "ids": "HX10880",
+        "true_label": "0",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT3.5"
+      },
+      "uid": "cbbdaa8f-9654-4237-9805-c3597f5c9895",
+      "llm": {
+        "key": "7a292e56-00e0-4574-b764-e047ece14558",
+        "name": "GPT3.5",
+        "emoji": "\ud83e\udd16",
+        "model": "gpt-3.5-turbo",
+        "base_model": "gpt-3.5-turbo",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT3.5",
+          "model": "gpt-3.5-turbo",
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": "text",
+          "tools": "",
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": "",
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "progress": {
+          "success": 95,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"<user> republicans don \u2019 t hate gays\"",
+      "responses": ["No."],
+      "tokens": {},
+      "eval_res": {
+        "items": [0],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "<user> <user> <user> today debate on nrc those who are equating muslims with hindu immigrants from bangladesh must read nhrc definition of a refugee to remove their bias against rss bjp muslim persecutors can not b refugees coming from a muslim country"
+      },
+      "metavars": {
+        "ids": "HX9001",
+        "true_label": "0",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT4o-mini"
+      },
+      "uid": "6286caae-2d11-4446-9e01-f4bd3a210629",
+      "llm": {
+        "key": "452b331d-823e-4b57-8b6c-555c8f3fd503",
+        "name": "GPT4o-mini",
+        "emoji": "\ud83d\udc44",
+        "model": "gpt-4o-mini",
+        "base_model": "gpt-4",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT4o-mini",
+          "model": "gpt-4o-mini"
+        },
+        "progress": {
+          "success": 100,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"<user> <user> <user> today debate on nrc those who are equating muslims with hindu immigrants from bangladesh must read nhrc definition of a refugee to remove their bias against rss bjp muslim persecutors can not b refugees coming from a muslim country\"",
+      "responses": ["No"],
+      "tokens": {},
+      "eval_res": {
+        "items": [0],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "<user> <user> <user> today debate on nrc those who are equating muslims with hindu immigrants from bangladesh must read nhrc definition of a refugee to remove their bias against rss bjp muslim persecutors can not b refugees coming from a muslim country"
+      },
+      "metavars": {
+        "ids": "HX9001",
+        "true_label": "0",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT3.5"
+      },
+      "uid": "34ca5d67-ca8e-4f0e-b306-85013066995b",
+      "llm": {
+        "key": "7a292e56-00e0-4574-b764-e047ece14558",
+        "name": "GPT3.5",
+        "emoji": "\ud83e\udd16",
+        "model": "gpt-3.5-turbo",
+        "base_model": "gpt-3.5-turbo",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT3.5",
+          "model": "gpt-3.5-turbo",
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": "text",
+          "tools": "",
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": "",
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "progress": {
+          "success": 95,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"<user> <user> <user> today debate on nrc those who are equating muslims with hindu immigrants from bangladesh must read nhrc definition of a refugee to remove their bias against rss bjp muslim persecutors can not b refugees coming from a muslim country\"",
+      "responses": ["No."],
+      "tokens": {},
+      "eval_res": {
+        "items": [0],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "actually it the resist the dick movement it does not have anything to do with politics i have a bull dyke in my neighborhood i asked her about it they are trying to get new recruits"
+      },
+      "metavars": {
+        "ids": "HX895",
+        "true_label": "1",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT4o-mini"
+      },
+      "uid": "b81c61ca-17a7-4b4e-ad3b-e91f813ee0c0",
+      "llm": {
+        "key": "452b331d-823e-4b57-8b6c-555c8f3fd503",
+        "name": "GPT4o-mini",
+        "emoji": "\ud83d\udc44",
+        "model": "gpt-4o-mini",
+        "base_model": "gpt-4",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT4o-mini",
+          "model": "gpt-4o-mini"
+        },
+        "progress": {
+          "success": 100,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"actually it the resist the dick movement it does not have anything to do with politics i have a bull dyke in my neighborhood i asked her about it they are trying to get new recruits\"",
+      "responses": ["No."],
+      "tokens": {},
+      "eval_res": {
+        "items": [0],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "actually it the resist the dick movement it does not have anything to do with politics i have a bull dyke in my neighborhood i asked her about it they are trying to get new recruits"
+      },
+      "metavars": {
+        "ids": "HX895",
+        "true_label": "1",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT3.5"
+      },
+      "uid": "36efbf52-f767-4939-b0ae-d4c80a4d22b0",
+      "llm": {
+        "key": "7a292e56-00e0-4574-b764-e047ece14558",
+        "name": "GPT3.5",
+        "emoji": "\ud83e\udd16",
+        "model": "gpt-3.5-turbo",
+        "base_model": "gpt-3.5-turbo",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT3.5",
+          "model": "gpt-3.5-turbo",
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": "text",
+          "tools": "",
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": "",
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "progress": {
+          "success": 95,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"actually it the resist the dick movement it does not have anything to do with politics i have a bull dyke in my neighborhood i asked her about it they are trying to get new recruits\"",
+      "responses": ["Yes"],
+      "tokens": {},
+      "eval_res": {
+        "items": [1],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "for fuck sake when is the western governments going to stop giving these retarded hostile muslims perpetual aid"
+      },
+      "metavars": {
+        "ids": "HX18617",
+        "true_label": "1",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT4o-mini"
+      },
+      "uid": "4694e71d-b6d8-4d96-82ab-33eb9460e754",
+      "llm": {
+        "key": "452b331d-823e-4b57-8b6c-555c8f3fd503",
+        "name": "GPT4o-mini",
+        "emoji": "\ud83d\udc44",
+        "model": "gpt-4o-mini",
+        "base_model": "gpt-4",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT4o-mini",
+          "model": "gpt-4o-mini"
+        },
+        "progress": {
+          "success": 100,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"for fuck sake when is the western governments going to stop giving these retarded hostile muslims perpetual aid\"",
+      "responses": ["Yes."],
+      "tokens": {},
+      "eval_res": {
+        "items": [1],
+        "dtype": "Numeric"
+      }
+    },
+    {
+      "vars": {
+        "Input": "for fuck sake when is the western governments going to stop giving these retarded hostile muslims perpetual aid"
+      },
+      "metavars": {
+        "ids": "HX18617",
+        "true_label": "1",
+        "__pt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"{Input}\"",
+        "LLM_0": "GPT3.5"
+      },
+      "uid": "e40b4716-2dfd-4bb6-89a2-6ba4e8cad241",
+      "llm": {
+        "key": "7a292e56-00e0-4574-b764-e047ece14558",
+        "name": "GPT3.5",
+        "emoji": "\ud83e\udd16",
+        "model": "gpt-3.5-turbo",
+        "base_model": "gpt-3.5-turbo",
+        "temp": 1,
+        "settings": {
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": {
+            "type": "text"
+          },
+          "tools": [],
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": [],
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "formData": {
+          "shortname": "GPT3.5",
+          "model": "gpt-3.5-turbo",
+          "system_msg": "You are a helpful assistant.",
+          "temperature": 1,
+          "response_format": "text",
+          "tools": "",
+          "tool_choice": "",
+          "parallel_tool_calls": true,
+          "top_p": 1,
+          "stop": "",
+          "seed": null,
+          "max_tokens": null,
+          "presence_penalty": 0,
+          "frequency_penalty": 0,
+          "logit_bias": null
+        },
+        "progress": {
+          "success": 95,
+          "error": 0
+        }
+      },
+      "prompt": "Is following text considered to be hatespeech? Only answer with \"yes\" or \"no\"! \n\nText: \"for fuck sake when is the western governments going to stop giving these retarded hostile muslims perpetual aid\"",
+      "responses": ["Yes"],
+      "tokens": {},
+      "eval_res": {
+        "items": [1],
+        "dtype": "Numeric"
+      }
+    }
+  ]
+}
