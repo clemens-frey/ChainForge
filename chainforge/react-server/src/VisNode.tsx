@@ -205,40 +205,54 @@ const VisNode: React.FC<VisNodeProps> = ({ data, id }) => {
 
   // const [plotType, setPlotType] = useState<string>("bar");
 
-  const plotTypeOptions = [
+  const plotTypeOptionsAll = [
     { value: "vanilla", label: "Vanilla" },
-    { value: "matrix", label: "Confusion matrix" },
     { value: "fpr", label: "False Positive Rate" },
     { value: "fnr", label: "False Negative Rate" },
     { value: "f1", label: "F1 Score" },
-    { value: "pinned auc", label: "Pinned AUC" },
+    { value: "pinned auc", label: "Pinned AUC" , disabled: !(
+        responses.length > 0 && (() => {
+          const firstVal = responses[0].responses?.[0];
+          // wenn mit confidence score geantwortet wurde
+          return typeof firstVal === 'number' || (!isNaN(Number(firstVal)));
+        })()
+      )
+    },
     { value: "table", label: "Metric Overview per LLM" },
     { value: "confusion_per_llm", label: "Matrix per LLM" },
-    { value: "roc auc", label: "ROC AUC" },
+
   ];
+
+
+  const noGroupPlotTypeOptions = plotTypeOptionsAll.filter((opt) =>
+      ["vanilla", "confusion_per_llm", "table"].includes(opt.value)
+    );
+
+    // Detect presence of 'group' in any response's metavars
+    const hasGroup = responses.some(
+      (r) => r.metavars && Object.prototype.hasOwnProperty.call(r.metavars, "group")
+    );
+
+  // Select appropriate options
+  const plotTypeOptions = hasGroup
+    ? plotTypeOptionsAll
+    : noGroupPlotTypeOptions;
 
   const handlePlotTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const val = e.target.value;
     setPlotType(val);
-    console.log(val);
     setDataPropsForNode(id, { plot_type: val });
   };
+
 
   const generateMatplotlibPlot = async () => {
     if (plotRequestInProgress.current || !responses || responses.length === 0)
       return;
     plotRequestInProgress.current = true;
-
-    // --- 1. assemble the same JSON you’d send to Plotly ---
-    // you can include anything: raw responses, selected var, group, type, etc.
     const payload = {
-      vars: data.vars, // all available var options
-      selected_var: multiSelectValue, // y-axis
-      llm_group: selectedLLMGroup, // group by
-      plot_type: plotType, // bar, box, scatter3d, etcw
-      responses, // the full LLMResponse[] array
+      plot_type: plotType, 
+      responses, 
     };
-
     try {
       const resp = await fetch("http://127.0.0.1:5000/plot", {
         method: "POST",
@@ -246,13 +260,8 @@ const VisNode: React.FC<VisNodeProps> = ({ data, id }) => {
         body: JSON.stringify(payload),
       });
       if (!resp.ok) throw new Error(await resp.text());
-
       const { image } = await resp.json();
-
-      // setPlotImage(`data:image/png;base64,${image}`);
-
       const dataUri = `data:image/png;base64,${image}`;
-
       setPlotImage(dataUri);
     } catch (err) {
       console.error("Matplotlib plot failed:", err);
@@ -1061,7 +1070,7 @@ const VisNode: React.FC<VisNodeProps> = ({ data, id }) => {
       <div
         style={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}
       >
-        <div style={{ display: "inline-flex", maxWidth: "50%" }}>
+        <div style={{ display: "inline-flex", maxWidth: "50%", marginRight: "auto" }}>
           <span
             style={{
               fontSize: "10pt",
@@ -1082,90 +1091,94 @@ const VisNode: React.FC<VisNodeProps> = ({ data, id }) => {
             //  disabled
           />
         </div>
-        <div
-          style={{
-            display: "inline-flex",
-            justifyContent: "space-evenly",
-            maxWidth: "30%",
-            marginLeft: "10pt",
-          }}
-        >
-          <span
+        {plotType === "vanilla" && (
+          <>
+          <div
             style={{
-              fontSize: "10pt",
-              margin: "6pt 3pt 0 0",
-              fontWeight: "bold",
-              whiteSpace: "nowrap",
+              display: "inline-flex",
+              justifyContent: "space-evenly",
+              maxWidth: "30%",
+              marginLeft: "10pt",
             }}
           >
-            y-axis:
-          </span>
-          <NativeSelect
-            ref={multiSelectRef}
-            onChange={handleMultiSelectValueChange}
-            className="nodrag nowheel"
-            data={multiSelectVars}
-            placeholder="Pick param to plot"
-            size="xs"
-            value={multiSelectValue}
-            miw="80px"
-          />
-        </div>
-        <div
-          style={{
-            display: "inline-flex",
-            justifyContent: "space-evenly",
-            maxWidth: "30%",
-            marginLeft: "10pt",
-          }}
-        >
-          <span
+            <span
+              style={{
+                fontSize: "10pt",
+                margin: "6pt 3pt 0 0",
+                fontWeight: "bold",
+                whiteSpace: "nowrap",
+              }}
+            >
+              y-axis:
+            </span>
+            <NativeSelect
+              ref={multiSelectRef}
+              onChange={handleMultiSelectValueChange}
+              className="nodrag nowheel"
+              data={multiSelectVars}
+              placeholder="Pick param to plot"
+              size="xs"
+              value={multiSelectValue}
+              miw="80px"
+            />
+          </div>
+          <div
             style={{
-              fontSize: "10pt",
-              margin: "6pt 3pt 0 0",
-              fontWeight: "bold",
-              whiteSpace: "nowrap",
+              display: "inline-flex",
+              justifyContent: "space-evenly",
+              maxWidth: "30%",
+              marginLeft: "10pt",
             }}
           >
-            x-axis:
-          </span>
-          <NativeSelect
-            className="nodrag nowheel"
-            data={["score"]}
-            size="xs"
-            value={"score"}
-            miw="80px"
-            disabled
-          />
-        </div>
-        <div
-          style={{
-            display: "inline-flex",
-            justifyContent: "space-evenly",
-            maxWidth: "30%",
-            marginLeft: "10pt",
-          }}
-        >
-          <span
+            <span
+              style={{
+                fontSize: "10pt",
+                margin: "6pt 3pt 0 0",
+                fontWeight: "bold",
+                whiteSpace: "nowrap",
+              }}
+            >
+              x-axis:
+            </span>
+            <NativeSelect
+              className="nodrag nowheel"
+              data={["score"]}
+              size="xs"
+              value={"score"}
+              miw="80px"
+              disabled
+            />
+          </div>
+          <div
             style={{
-              fontSize: "10pt",
-              margin: "6pt 3pt 0 0",
-              fontWeight: "bold",
-              whiteSpace: "nowrap",
+              display: "inline-flex",
+              justifyContent: "space-evenly",
+              maxWidth: "30%",
+              marginLeft: "10pt",
             }}
           >
-            group by:
-          </span>
-          <NativeSelect
-            className="nodrag nowheel"
-            onChange={handleChangeLLMGroup}
-            data={availableLLMGroups}
-            size="xs"
-            value={selectedLLMGroup}
-            miw="80px"
-            disabled={availableLLMGroups.length <= 1}
-          />
-        </div>
+            <span
+              style={{
+                fontSize: "10pt",
+                margin: "6pt 3pt 0 0",
+                fontWeight: "bold",
+                whiteSpace: "nowrap",
+              }}
+            >
+              group by:
+            </span>
+            <NativeSelect
+              className="nodrag nowheel"
+              onChange={handleChangeLLMGroup}
+              data={availableLLMGroups}
+              size="xs"
+              value={selectedLLMGroup}
+              miw="80px"
+              disabled={availableLLMGroups.length <= 1}
+            />
+          </div>
+        </>
+      )}
       </div>
       <hr />
 

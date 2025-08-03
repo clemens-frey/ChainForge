@@ -34,29 +34,33 @@ def plot():
         fig = plot_heatmap(matrix, f"{metric_name.upper()} Heatmap")
         return fig
 
-    def plotMatrix(ax,df):
-        """Plot confusion matrix."""
-        cm = calculate_metrics(df,df)['confusion_matrix']
-        disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=["Negative (0)", "Positive (1)"])
-        disp.plot(cmap='spring', ax=ax) 
-        ax.set_xlabel("predicted label")
-        ax.set_ylabel("true_label")
-
 
     def json_to_dataframe(responses):
         records = []
         for entry in responses:
             try:
+                
+                meta = entry.get('metavars') or {}
+                group = meta.get('group', 'ALL')
+
+                y_true = int(meta.get('true_label', 0))
+                y_pred = int(entry['eval_res']['items'][0])
+                y_pred_values = float(entry['responses'][0]) if is_numeric(entry['responses'][0]) else 0.0
+                llm = entry.get('llm')["name"]
+
+                
+
                 records.append({
-                    "group": entry["metavars"]["group"],
-                    "llm": entry["llm"][ "name"],
-                    "y_true": int(entry["metavars"]["true_label"]),
-                    "y_pred": int(entry["eval_res"]["items"][0]),
-                    "y_pred_values": float(entry["responses"][0]) 
+                    "group": group,
+                    "llm": llm,
+                    "y_true": y_true,
+                    "y_pred": y_pred,
+                    "y_pred_values": y_pred_values,
 
                 })
             except (KeyError, ValueError):
                 continue
+
         return pd.DataFrame(records)
     
     def compute_pinned_auc_for_group(subdf: pd.DataFrame, df_all: pd.DataFrame):
@@ -126,26 +130,16 @@ def plot():
         return pinned_auc
     
 
-    def plot_heatmap2(matrix, metric):
-        fig, ax = plt.subplots(figsize=(10, 4))
-        #YlOrBr
-        im = ax.imshow(matrix.values, cmap=sns.color_palette("rocket_r", as_cmap=True), vmin=0, vmax=1)
-        ax.set_xticks(range(len(matrix.columns)))
-        ax.set_yticks(range(len(matrix.index)))
-        ax.set_xticklabels(matrix.columns, rotation=45, ha="right")
-        ax.set_yticklabels(matrix.index)
+    def includesScore(df: pd.DataFrame) -> bool:
+        """Check if the DataFrame contains a score column."""
+        if "y_pred_values" not in df.columns:
+            return False
+        vals = df["y_pred_values"].dropna()
+        return (vals != 0).any()
 
-        for i in range(matrix.shape[0]):
-            for j in range(matrix.shape[1]):
-                val = matrix.iat[i, j]
-                color = "white" if val > 0.4 else "black"
-                #color = "black"
-                ax.text(j, i, f"{val:.2f}", ha="center", va="center", color=color, fontsize=8)
-                
-        ax.set_title(f"{metric.upper()} Heatmap")
-        plt.colorbar(im, ax=ax, fraction=0.03)
-        plt.tight_layout()
-        return fig
+
+
+
     
     def plot_heatmap(matrix: pd.DataFrame, title: str) -> plt.Figure:
         """Plot a heatmap using seaborn with annotations and fixed colormap scale."""
@@ -170,6 +164,13 @@ def plot():
 
         return fig
     
+    def is_numeric(val):
+        try:
+            float(val)
+            return True
+        except (ValueError, TypeError):
+            return False
+    
 
 
 
@@ -188,7 +189,8 @@ def plot():
                 "FNR": m["fnr"],
                 "FPR": m["fpr"],
                 "F1": m["f1"],
-                "ROC AUC": m["roc auc"],
+                #"ROC AUC": m["roc auc"],
+                **({"ROC AUC": m["roc auc"]} if includesScore(df) else {}),
             })
 
         # Create DataFrame for table
@@ -234,72 +236,6 @@ def plot():
 
         return fig
 
-
-    def plot_metric_table4(df):
-        """Create a table plot showing FNR, FPR, F1, AUC, PREC, RECALL, ACC per LLM with highlights and no visible vertical lines."""
-
-        # Group by LLM and aggregate metrics
-        rows = []
-        for llm, group_df in df.groupby("llm"):
-            m = calculate_metrics(group_df["y_true"], group_df["y_pred"])
-            rows.append({
-                "LLM": llm,
-                "ACC":  round(m["acc"], 2),
-                "PREC": round(m["prec"], 2),
-                "RECALL": round(m["recall"], 2),
-                "FNR": round(m["fnr"], 2),
-                "FPR": round(m["fpr"], 2),
-                "F1":  round(m["f1"], 2),
-                "AUC": round(m["auc"], 2),
-            })
-
-        # Create DataFrame for table
-        table_df = pd.DataFrame(rows).set_index("LLM")
-
-        # Prepare colors
-        red = "#f08080"
-        blue = "#add8e6"
-
-        # Identify best and worst values per column
-        best_values = {}
-        worst_values = {}
-        for col in table_df.columns:
-            ascending = col in ["FNR", "FPR"]  # Lower is better
-            best_values[col] = table_df[col].min() if ascending else table_df[col].max()
-            worst_values[col] = table_df[col].max() if ascending else table_df[col].min()
-
-        # Plot as table
-        fig, ax = plt.subplots(figsize=(8, 0.5 + 0.5 * len(table_df)))
-        ax.axis("off")
-        table = ax.table(cellText=table_df.values,
-                        colLabels=table_df.columns,
-                        rowLabels=table_df.index,
-                        loc="center",
-                        cellLoc="center")
-        table.scale(1, 1.5)
-        ax.set_title("Metrics by LLM", fontsize=14, pad=10)
-
-        # Style cells
-        for key, cell in table.get_celld().items():
-            i, j = key
-            cell.set_edgecolor("white")  # remove vertical lines visually
-            cell.set_linewidth(2)      # optional: adjust line thickness
-            if i == 0 and j > 0:  # header row, excluding index label
-                #cell.set_edgecolor("white")  # first reset all
-                cell.set_edgecolor("black")
-                cell.set_linewidth(2)
-                cell.visible_edges = "B"             # only bottom edge
-
-            if i > 0 and j > 0:  # only data cells
-                llm = table_df.index[i - 1]
-                col = table_df.columns[j - 1]
-                value = table_df.loc[llm, col]
-                if value == best_values[col]:
-                    cell.set_facecolor(blue)
-                elif value == worst_values[col]:
-                    cell.set_facecolor(red)
-
-        return fig
 
 
 
@@ -372,15 +308,18 @@ def plot():
     #data = request.json
 
     payload      = request.json or {}
-    llm_group    = payload.get("llm_group", "LLM") # e.g. "LLM" or "__meta_0"
     plot_type    = payload.get("plot_type", "line")
     responses    = payload.get("responses", [])
 
 
     y_true = [int(entry["metavars"]["true_label"]) for entry in payload["responses"]]
     y_pred = [entry["eval_res"]["items"][0] for entry in payload["responses"]]
-    y_pred_values = [float(entry["responses"][0]) for entry in payload["responses"]]
-      
+    y_pred_values = [
+        float(e["responses"][0])
+        for e in payload["responses"]
+        if is_numeric(e["responses"][0])
+    ]      
+
     global plot_cache
     payload_hash = get_payload_hash(payload)
     if payload_hash in plot_cache:
@@ -394,11 +333,7 @@ def plot():
 
     # create plot
     
-    if plot_type == "matrix":
-        df = json_to_dataframe(responses)
-        fig, ax = plt.subplots()
-        plotMatrix(ax,df)
-    elif plot_type in ("f1", "fpr", "fnr", "pinned auc","roc auc"):
+    if plot_type in ("f1", "fpr", "fnr", "pinned auc","roc auc"):
         df = json_to_dataframe(responses)
         matrix = compute_metric_matrix(df, plot_type)
         fig = plot_heatmap(matrix,plot_type)
