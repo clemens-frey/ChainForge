@@ -210,28 +210,31 @@ const VisNode: React.FC<VisNodeProps> = ({ data, id }) => {
     { value: "fpr", label: "False Positive Rate" },
     { value: "fnr", label: "False Negative Rate" },
     { value: "f1", label: "F1 Score" },
-    { value: "pinned auc", label: "Pinned AUC" , disabled: !(
-        responses.length > 0 && (() => {
+    {
+      value: "pinned auc",
+      label: "Pinned AUC",
+      disabled: !(
+        responses.length > 0 &&
+        (() => {
           const firstVal = responses[0].responses?.[0];
           // wenn mit confidence score geantwortet wurde
-          return typeof firstVal === 'number' || (!isNaN(Number(firstVal)));
+          return typeof firstVal === "number" || !isNaN(Number(firstVal));
         })()
-      )
+      ),
     },
     { value: "table", label: "Metric Overview per LLM" },
     { value: "confusion_per_llm", label: "Matrix per LLM" },
-
   ];
 
-
   const noGroupPlotTypeOptions = plotTypeOptionsAll.filter((opt) =>
-      ["vanilla", "confusion_per_llm", "table"].includes(opt.value)
-    );
+    ["vanilla", "confusion_per_llm", "table"].includes(opt.value),
+  );
 
-    // Detect presence of 'group' in any response's metavars
-    const hasGroup = responses.some(
-      (r) => r.metavars && Object.prototype.hasOwnProperty.call(r.metavars, "group")
-    );
+  // Detect presence of 'group' in any response's metavars
+  const hasGroup = responses.some(
+    (r) =>
+      r.metavars && Object.prototype.hasOwnProperty.call(r.metavars, "group"),
+  );
 
   // Select appropriate options
   const plotTypeOptions = hasGroup
@@ -244,14 +247,13 @@ const VisNode: React.FC<VisNodeProps> = ({ data, id }) => {
     setDataPropsForNode(id, { plot_type: val });
   };
 
-
   const generateMatplotlibPlot = async () => {
     if (plotRequestInProgress.current || !responses || responses.length === 0)
       return;
     plotRequestInProgress.current = true;
     const payload = {
-      plot_type: plotType, 
-      responses, 
+      plot_type: plotType,
+      responses,
     };
     try {
       const resp = await fetch("http://127.0.0.1:5000/plot", {
@@ -1070,7 +1072,13 @@ const VisNode: React.FC<VisNodeProps> = ({ data, id }) => {
       <div
         style={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}
       >
-        <div style={{ display: "inline-flex", maxWidth: "50%", marginRight: "auto" }}>
+        <div
+          style={{
+            display: "inline-flex",
+            maxWidth: "50%",
+            marginRight: "auto",
+          }}
+        >
           <span
             style={{
               fontSize: "10pt",
@@ -1093,92 +1101,92 @@ const VisNode: React.FC<VisNodeProps> = ({ data, id }) => {
         </div>
         {plotType === "vanilla" && (
           <>
-          <div
-            style={{
-              display: "inline-flex",
-              justifyContent: "space-evenly",
-              maxWidth: "30%",
-              marginLeft: "10pt",
-            }}
-          >
-            <span
+            <div
               style={{
-                fontSize: "10pt",
-                margin: "6pt 3pt 0 0",
-                fontWeight: "bold",
-                whiteSpace: "nowrap",
+                display: "inline-flex",
+                justifyContent: "space-evenly",
+                maxWidth: "30%",
+                marginLeft: "10pt",
               }}
             >
-              y-axis:
-            </span>
-            <NativeSelect
-              ref={multiSelectRef}
-              onChange={handleMultiSelectValueChange}
-              className="nodrag nowheel"
-              data={multiSelectVars}
-              placeholder="Pick param to plot"
-              size="xs"
-              value={multiSelectValue}
-              miw="80px"
-            />
-          </div>
-          <div
-            style={{
-              display: "inline-flex",
-              justifyContent: "space-evenly",
-              maxWidth: "30%",
-              marginLeft: "10pt",
-            }}
-          >
-            <span
+              <span
+                style={{
+                  fontSize: "10pt",
+                  margin: "6pt 3pt 0 0",
+                  fontWeight: "bold",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                y-axis:
+              </span>
+              <NativeSelect
+                ref={multiSelectRef}
+                onChange={handleMultiSelectValueChange}
+                className="nodrag nowheel"
+                data={multiSelectVars}
+                placeholder="Pick param to plot"
+                size="xs"
+                value={multiSelectValue}
+                miw="80px"
+              />
+            </div>
+            <div
               style={{
-                fontSize: "10pt",
-                margin: "6pt 3pt 0 0",
-                fontWeight: "bold",
-                whiteSpace: "nowrap",
+                display: "inline-flex",
+                justifyContent: "space-evenly",
+                maxWidth: "30%",
+                marginLeft: "10pt",
               }}
             >
-              x-axis:
-            </span>
-            <NativeSelect
-              className="nodrag nowheel"
-              data={["score"]}
-              size="xs"
-              value={"score"}
-              miw="80px"
-              disabled
-            />
-          </div>
-          <div
-            style={{
-              display: "inline-flex",
-              justifyContent: "space-evenly",
-              maxWidth: "30%",
-              marginLeft: "10pt",
-            }}
-          >
-            <span
+              <span
+                style={{
+                  fontSize: "10pt",
+                  margin: "6pt 3pt 0 0",
+                  fontWeight: "bold",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                x-axis:
+              </span>
+              <NativeSelect
+                className="nodrag nowheel"
+                data={["score"]}
+                size="xs"
+                value={"score"}
+                miw="80px"
+                disabled
+              />
+            </div>
+            <div
               style={{
-                fontSize: "10pt",
-                margin: "6pt 3pt 0 0",
-                fontWeight: "bold",
-                whiteSpace: "nowrap",
+                display: "inline-flex",
+                justifyContent: "space-evenly",
+                maxWidth: "30%",
+                marginLeft: "10pt",
               }}
             >
-              group by:
-            </span>
-            <NativeSelect
-              className="nodrag nowheel"
-              onChange={handleChangeLLMGroup}
-              data={availableLLMGroups}
-              size="xs"
-              value={selectedLLMGroup}
-              miw="80px"
-              disabled={availableLLMGroups.length <= 1}
-            />
-          </div>
-        </>
-      )}
+              <span
+                style={{
+                  fontSize: "10pt",
+                  margin: "6pt 3pt 0 0",
+                  fontWeight: "bold",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                group by:
+              </span>
+              <NativeSelect
+                className="nodrag nowheel"
+                onChange={handleChangeLLMGroup}
+                data={availableLLMGroups}
+                size="xs"
+                value={selectedLLMGroup}
+                miw="80px"
+                disabled={availableLLMGroups.length <= 1}
+              />
+            </div>
+          </>
+        )}
       </div>
       <hr />
 
