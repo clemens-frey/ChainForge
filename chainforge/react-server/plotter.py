@@ -223,9 +223,9 @@ def plot():
     
    
 
-    payload      = request.json or {}
-    plot_type    = payload.get("plot_type", "line")
-    responses    = payload.get("responses", [])
+    payload = request.json or {}
+    plot_type = payload.get("plot_type", "line")
+    responses = payload.get("responses", [])
 
 
     #chache to fix repeated plotting
@@ -233,11 +233,6 @@ def plot():
     hash = get_hash(payload)
     if hash in chached_plots:
         return jsonify({"image": chached_plots[hash]})
-
-    json_object = json.dumps(payload, indent=4)
-        # Writing to sample.json
-    with open("sample2.json", "w") as outfile:
-        outfile.write(json_object)
 
     # create plot
     df = json_to_dataframe(responses)
